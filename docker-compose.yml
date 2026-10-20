@@ -12,8 +12,8 @@ services:
     ports:
       - 3000:1337
     environment:
-      - BASE_URL=${BASE_URL}
-      - DATABASE_URL=${DATABASE_URL}
+      - BASE_URL=http://localhost:3000
+      - DATABASE_URL=postgresql://postgres@postgres/planka
 
       # Optionally store the database password in secrets:
       # - DATABASE_URL=postgresql://postgres:$${DATABASE_PASSWORD}@postgres/planka
@@ -26,7 +26,7 @@ services:
       # published example value means anyone can mint a token for any account
       # on this instance. Generate one with: openssl rand -hex 32
       # PLANKA warns about this on every start until you change it.
-      - SECRET_KEY=${SECRET_KEY}
+      - SECRET_KEY=${SECRET_KEY:?SECRET_KEY doit être définie}
       # Optionally store in secrets - then SECRET_KEY should not be set
       # - SECRET_KEY__FILE=/run/secrets/secret_key
 
