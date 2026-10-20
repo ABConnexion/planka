@@ -12,7 +12,7 @@ services:
     ports:
       - 3000:1337
     environment:
-      - BASE_URL=http://localhost:3000
+      - BASE_URL=https://9mtoarzmipgkldpn4hoofh7z.187.7.76.87.sslip.io
       - DATABASE_URL=postgresql://postgres@postgres/planka
 
       # Optionally store the database password in secrets:
